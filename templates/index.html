@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block head %} {% endblock %}
+
+{% block body %}
+<div class="container">
+  <h1>Behold</h1>
+
+  <form action="/" method="POST">
+    <input type="text" name="name" id="name">
+    <input type="submit" value="Add Thingy">
+  </form>
+
+  <table border="1" cellpadding="6">
+    <tr>
+      <th>Thingy</th>
+      <th>Added</th>
+      <th>Actions</th>
+    </tr>
+    {% for thingy in thingys %}
+    <tr>
+        <td>{{ thingy.name }}</td>
+        <td>{{thingy.date_created.date() }}</td>
+        <td>
+            <a href="/delete/{{thingy.id}}">Delete</a>
+            <br>
+            <a href="/update/{{thingy.id}}">Edit</a>
+        </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+</div>
+{% endblock %}
