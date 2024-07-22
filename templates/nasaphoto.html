@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block head %} {% endblock %} {% block body %}
+
+<div class="container">
+  <div>Date: {{ nasa_data.date}}</div>
+  <div><img src="{{ nasa_data.url}}" /></div>
+  <div>{{ nasa_data.explanation }}</div>
+</div>
+
+{% endblock %}
